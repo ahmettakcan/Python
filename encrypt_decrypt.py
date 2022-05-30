@@ -7,55 +7,53 @@ str = input("Write your password : ")
 n = int(input("Write number : "))
 
 def encypt(str ,n):
-  strn = ""
-  i, j = 0, 0
-
-  length = len(str)
-  while i < length:
-    while j < 26:
-      if str[i] == alphabet[j]:
-        max = (j + n) % 26 
-        strn += alphabet[max]
-      j += 1
-    j = 0
-    i += 1
-  print(strn)
+	strn = ""
+	i, j = 0, 0
+	length = len(str)
+	
+	while i < length:
+		while j < 26:
+			if str[i] == alphabet[j]:
+				max = (j + n) % 26 
+				strn += alphabet[max]
+			j += 1
+		j = 0
+		i += 1
+	print(strn)
 def decrypt(str, n):
-  strn = ""
-  i, j = 0, 0
+	strn = ""
+	i, j = 0, 0
+	length = len(str)
 
-  length = len(str)
-  while i < length:
-    while j < 26:
-      if str[i] == alphabet[j]:
-        max = (j - n) % 26 
-        strn += alphabet[max]
-      j += 1
-    j = 0
-    i += 1
-  print(strn)
+	while i < length:
+		while j < 26:
+			if str[i] == alphabet[j]:
+				max = (j - n) % 26 
+				strn += alphabet[max]
+			j += 1
+		j = 0
+		i += 1
+	print(strn)
 
 if convert.lower() == "e":
-  encypt(str, n)
+	encypt(str, n)
   
 elif convert.lower() == "d":
-  decrypt(str, n)
+	decrypt(str, n)
 
 answer = input("Would you like to continiue : ")
 while answer == "yes":
-  convert = input("Encypt or Decyrpt Again : ")
+	convert = input("Encypt or Decyrpt Again : ")
+	str = input("Write your password again my honey : ")
+	n = int(input("Write number again my love : "))
   
-  str = input("Write your password again my honey : ")
-  
-  n = int(input("Write number again my love : "))
-  
-  if convert.lower() == "e":
-    encypt(str, n)
+if convert.lower() == "e":
+	encypt(str, n)
     
-  elif convert.lower() == "d":
-    decrypt(str, n)
+elif convert.lower() == "d":
+	decrypt(str, n)
 	  
-  answer = input("Would you like to continiue : ")
+answer = input("Would you like to continiue : ")
   
 if answer == "no":
-  print("Byeee! :(")
+	print("Byeee! :(")
